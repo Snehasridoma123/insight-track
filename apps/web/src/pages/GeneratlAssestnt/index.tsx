@@ -54,6 +54,10 @@ const ChatPage = () => {
       </Box>
       <HStack p={4} borderTop="1px solid" borderColor="gray.200">
         <Input
+        onKeyDown={(event)=>{
+          if (event.key === 'Enter') {
+            handleSend();
+        }}}
           placeholder="Type a message..."
           value={input}
           onChange={(e) => setInput(e.target.value)}
@@ -61,6 +65,7 @@ const ChatPage = () => {
         <Button colorScheme="blue" onClick={handleSend}>
           Send
         </Button>
+
       </HStack>
     </Box>
   );
